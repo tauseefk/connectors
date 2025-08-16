@@ -1,0 +1,20 @@
+[package]
+name = "connectors"
+version = "0.1.0"
+edition = "2024"
+authors = ["tauseefk"]
+description = "Connect-4 gameplay engine"
+
+[lib]
+# doesn't need rlib as it's not being consumed by any rust crates
+# cdylib allows this crate to be consumed as a library
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = { workspace = true }
+js-sys = { workspace = true }
+web-sys = { workspace = true }
+console_error_panic_hook = { workspace = true }
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3.13"
