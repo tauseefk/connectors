@@ -15,9 +15,23 @@ May the connect-4s be with you.
 - Rust toolchain (for running the Rust code)
 - wasm-pack (for compiling to WASM)
 
-## Chapters
+## Outcomes [WIP]
+
+These are some of the things you will be able to do by the end of this series:
+
+- see similarities and differences between parts of Rust and Javascript
+- send data back and forth between the Rust (WASM) and Javascript context
+- expose the minimal set of APIs from your Rust code to structure your application
+- play connect 4 in a browser
+
+## Chapters [WIP]
+
 - [Chapter 1 - Initial Commit](https://github.com/tauseefk/connectors/tree/making-connections)
 - [Chapter 2 - Structuring Data](https://github.com/tauseefk/connectors/tree/data-as-enums)
+- [Chapter 3 - Calling home]()
+- [Chapter 4 - Rendering a grid]()
+- [Chapter 5 - Event handling]()
+- [Chapter 6 - Who won?]()
 
 ## Other Resources
 
