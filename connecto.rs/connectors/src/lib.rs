@@ -1,23 +1,24 @@
+// this is similar to suppressing unused export lint warnings
+#![allow(dead_code)]
+
 mod engine;
 
 mod prelude {
     pub use std::fmt;
 
     pub use wasm_bindgen::prelude::wasm_bindgen;
-
-    pub use crate::engine::*;
 }
 
 use prelude::*;
 
 #[wasm_bindgen]
-pub fn say_hello() {
-    let tile_1 = TileType::Red;
-    let tile_2 = TileType::Black;
-    let tile_3 = TileType::Empty;
+extern "C" {
+    #[wasm_bindgen(js_name = mathRandom)]
+    fn math_random() -> f32;
+}
 
-    web_sys::console::log_1(&format!("Tile 1 belongs to: {}", tile_1).into());
-    web_sys::console::log_1(&format!("Tile 2 belongs to: {}", tile_2).into());
-    web_sys::console::log_1(&format!("Tile 3 is: {}", tile_3).into());
-    web_sys::console::log_1(&format!("Is Tile 3 empty: {}", tile_3.is_empty()).into());
+#[wasm_bindgen]
+pub fn say_hello() {
+    let random_float = math_random();
+    web_sys::console::log_1(&format!("Random number: {}", random_float).into());
 }
