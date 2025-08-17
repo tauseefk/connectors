@@ -9,12 +9,23 @@ pub enum TileType {
 impl fmt::Display for TileType {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         let tile_repr = match self {
-            TileType::Empty => "Empty",
-            TileType::Red => "Player Red",
-            TileType::Black => "Player Black",
+            TileType::Empty => "_",
+            TileType::Red => "R",
+            TileType::Black => "B",
         };
 
         write!(f, "{tile_repr}")
+    }
+}
+
+impl From<u8> for TileType {
+    fn from(value: u8) -> Self {
+        match value {
+            0 => TileType::Empty,
+            1 => TileType::Red,
+            2 => TileType::Black,
+            _ => panic!("Unexpected character {value} found for tile."),
+        }
     }
 }
 
