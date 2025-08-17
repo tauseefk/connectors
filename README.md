@@ -15,6 +15,10 @@ May the connect-4s be with you.
 - Rust toolchain (for running the Rust code)
 - wasm-pack (for compiling to WASM)
 
+## Chapters
+- [Chapter 1 - Initial Commit](https://github.com/tauseefk/connectors/tree/making-connections)
+- [Chapter 2 - Structuring Data](https://github.com/tauseefk/connectors/tree/data-as-enums)
+
 ## Other Resources
 
 [WASM Game of Life](https://rustwasm.github.io/book/game-of-life/introduction.html)
