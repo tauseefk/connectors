@@ -18,4 +18,5 @@ May the connect-4s be with you.
 ## Other Resources
 
 [WASM Game of Life](https://rustwasm.github.io/book/game-of-life/introduction.html)
+
 [Bare Metal WASM](https://cliffle.com/blog/bare-metal-wasm/)
