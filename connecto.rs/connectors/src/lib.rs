@@ -26,7 +26,7 @@ fn get_random_values(n: usize, k: u8) -> Vec<u8> {
 fn pretty_print_grid(board: &Vec<TileType>) {
     let mut output = String::new();
     board.iter().enumerate().for_each(|(i, tile)| {
-        if i % COLS_COUNT == 0 && i != 0 {
+        if i > 0 && i % COLS_COUNT == 0 {
             output.push('\n');
         }
         output.push_str(&format!("{} ", tile));
@@ -37,6 +37,7 @@ fn pretty_print_grid(board: &Vec<TileType>) {
 
 #[wasm_bindgen]
 pub fn say_hello() {
+    // TileType has 3 variants, so we want 0, 1, and 2 as the values
     let board = get_random_values(ROWS_COUNT * COLS_COUNT, 3);
     let board: Vec<TileType> = board.iter().map(|&v| v.into()).collect();
     pretty_print_grid(&board);
