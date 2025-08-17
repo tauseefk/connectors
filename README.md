@@ -28,7 +28,9 @@ These are some of the things you will be able to do by the end of this series:
 
 - [Chapter 1 - Initial Commit](https://github.com/tauseefk/connectors/tree/making-connections)
 - [Chapter 2 - Structuring Data](https://github.com/tauseefk/connectors/tree/data-as-enums)
-- [Chapter 3 - Calling home]()
+- Chapter 3 - Calling home
+  - [3.1 - Calling home](https://github.com/tauseefk/connectors/tree/calling-home)
+  - [3.2 - Calling home again](https://github.com/tauseefk/connectors/tree/calling-home-again)
 - [Chapter 4 - Rendering a grid]()
 - [Chapter 5 - Event handling]()
 - [Chapter 6 - Who won?]()
