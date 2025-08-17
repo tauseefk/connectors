@@ -12,7 +12,6 @@ crate-type = ["cdylib"]
 
 [dependencies]
 wasm-bindgen = { workspace = true }
-js-sys = { workspace = true }
 web-sys = { workspace = true }
 console_error_panic_hook = { workspace = true }
 
