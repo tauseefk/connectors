@@ -4,10 +4,30 @@
         <meta charset="utf-8" />
         <title>Connectors</title>
         <script type="module">
-            import init, { say_hello } from "./connectors/connectors.js";
+            import init, { Board, TileType } from "./connectors/connectors.js";
+            const ROW_COUNT = 6;
+            const COL_COUNT = 7;
+            // just so it's easy to render as a grid
+            const DISPLAY_TILE_MAP = {
+                [TileType.Empty]: "_",
+                [TileType.Red]: "R",
+                [TileType.Black]: "B",
+            };
 
             init().then(() => {
-                say_hello();
+                const board = Board.new(ROW_COUNT, COL_COUNT);
+                const tiles = Array.from(board.get_board).map(
+                    (tileEnumValue) => DISPLAY_TILE_MAP[tileEnumValue],
+                );
+                let boardGrid = "";
+                tiles.forEach((tile, idx) => {
+                    // if next tile starts a new row, add a newline
+                    boardGrid =
+                        (idx + 1) % COL_COUNT === 0
+                            ? `${boardGrid} ${tile} \n`
+                            : `${boardGrid} ${tile}`;
+                });
+                console.log(boardGrid);
             });
         </script>
     </head>
