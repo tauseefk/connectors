@@ -12,13 +12,8 @@ mod prelude {
 use prelude::*;
 
 #[wasm_bindgen]
-extern "C" {
-    #[wasm_bindgen(js_name = mathRandom)]
-    fn math_random() -> f32;
-}
-
-#[wasm_bindgen]
 pub fn say_hello() {
-    let random_float = math_random();
+    // js_sys crate provides Math::random()
+    let random_float = js_sys::Math::random();
     web_sys::console::log_1(&format!("Random number: {}", random_float).into());
 }
