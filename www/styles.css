@@ -1,0 +1,21 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-board {
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#game-board span {
+  text-align: center;
+  padding: 8px;
+  width: 16px;
+  height: 16px;
+}

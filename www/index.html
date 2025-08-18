@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Connectors</title>
+        <link rel="stylesheet" href="styles.css" />
         <script type="module">
             import init, { Board, TileType } from "./connectors/connectors.js";
             const ROW_COUNT = 6;
@@ -19,15 +20,15 @@
                 const tiles = Array.from(board.get_board).map(
                     (tileEnumValue) => DISPLAY_TILE_MAP[tileEnumValue],
                 );
-                let boardGrid = "";
+                const fragment = document.createDocumentFragment();
                 tiles.forEach((tile, idx) => {
-                    // if next tile starts a new row, add a newline
-                    boardGrid =
-                        (idx + 1) % COL_COUNT === 0
-                            ? `${boardGrid} ${tile} \n`
-                            : `${boardGrid} ${tile}`;
+                    const span = document.createElement("span");
+                    span.textContent = tile;
+                    fragment.appendChild(span);
                 });
-                console.log(boardGrid);
+
+                const gameBoard = document.getElementById("game-board");
+                gameBoard.appendChild(fragment);
             });
         </script>
     </head>
