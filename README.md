@@ -35,7 +35,7 @@ These are some of the things you will be able to do by the end of this series:
   - [4.1 - Returning the grid](https://github.com/tauseefk/connectors/tree/returning-a-grid)
   - [4.2 - Rendering the grid](https://github.com/tauseefk/connectors/tree/rendering-html-grid)
 - Chapter 5
-  - [5.1 - Making moves]()
+  - [5.1 - Making moves](https://github.com/tauseefk/connectors/tree/making-moves)
   - [5.2 - Interactivity]()
 - [Chapter 6 - Who won?]()
 
