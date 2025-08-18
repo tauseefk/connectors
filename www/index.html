@@ -17,9 +17,14 @@
 
             init().then(() => {
                 const board = Board.new(ROW_COUNT, COL_COUNT);
-                board.select_col(0);
-                board.select_col(0);
-                board.select_col(0);
+                console.log(board.select_col(0));
+                console.log(board.select_col(0));
+                console.log(board.select_col(0));
+                console.log(board.select_col(0));
+                console.log(board.select_col(0));
+                console.log(board.select_col(0));
+                // this logs false as the move isn't legal
+                console.log(board.select_col(0));
                 const tiles = Array.from(board.get_board).map(
                     (tileEnumValue) => DISPLAY_TILE_MAP[tileEnumValue],
                 );

@@ -81,6 +81,7 @@ impl Board {
         js_sys::Uint8Array::from(&board[..])
     }
 
+    // Ends the current player's turn and sets the player turn to the next one
     fn end_player_turn(&mut self) {
         self.player_turn = match self.player_turn {
             Player::Red => Player::Black,
@@ -98,9 +99,8 @@ impl Board {
             return false;
         }
         let rows = self.board.chunks(self.col_count);
-        let rows_reversed = rows.rev();
         let mut empty_row_idx: Option<usize> = None;
-        for (idx, row) in rows_reversed.enumerate() {
+        for (idx, row) in rows.rev().enumerate() {
             let tile_in_row = row.get(col_idx as usize).expect("This cannot happen");
 
             if tile_in_row.is_empty() {
@@ -137,10 +137,12 @@ impl Board {
         }
     }
 
+    /// Check whether the col_idx provided is in the board's bounds
     fn is_in_bounds(&self, col_idx: u8) -> bool {
         (col_idx as usize) < self.col_count
     }
 
+    /// Get the board tile's index from a row and column index
     fn idx_from_row_col(&self, row_idx: usize, col_idx: usize) -> usize {
         self.col_count * row_idx + col_idx
     }
