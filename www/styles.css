@@ -8,6 +8,7 @@ body {
 }
 
 #game-board {
+  cursor: pointer;
   max-width: 600px;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -18,4 +19,16 @@ body {
   padding: 8px;
   width: 16px;
   height: 16px;
+}
+
+#player-turn {
+  padding: 8px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
 }
