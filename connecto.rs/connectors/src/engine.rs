@@ -105,15 +105,15 @@ impl Board {
 
             if tile_in_row.is_empty() {
                 // as the rows are reversed we need to subtract from row_count
-                empty_row_idx = Some(self.row_count - idx);
+                empty_row_idx = Some(self.row_count - idx - 1);
                 break;
             }
         }
 
-        // if no empty row fould for `col_idx` return false
+        // if no empty row found for `col_idx` return false
         match empty_row_idx {
             Some(empty_row_idx) => {
-                let idx_to_update = self.row_count * empty_row_idx;
+                let idx_to_update = self.idx_from_row_col(empty_row_idx, col_idx as usize);
                 // update board with the tile corresponding to current player turn
                 self.board = self
                     .board
@@ -139,5 +139,9 @@ impl Board {
 
     fn is_in_bounds(&self, col_idx: u8) -> bool {
         (col_idx as usize) < self.col_count
+    }
+
+    fn idx_from_row_col(&self, row_idx: usize, col_idx: usize) -> usize {
+        self.col_count * row_idx + col_idx
     }
 }
