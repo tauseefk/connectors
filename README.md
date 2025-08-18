@@ -32,9 +32,11 @@ These are some of the things you will be able to do by the end of this series:
   - [3.1 - Calling home](https://github.com/tauseefk/connectors/tree/calling-home)
   - [3.2 - Calling home again](https://github.com/tauseefk/connectors/tree/calling-home-again)
 - Chapter 4
-  - [Chapter 4 - Returning the grid](https://github.com/tauseefk/connectors/tree/returning-a-grid)
-  - [Chapter 4 - Rendering the grid](https://github.com/tauseefk/connectors/tree/rendering-html-grid)
-- [Chapter 5 - Event handling]()
+  - [4.1 - Returning the grid](https://github.com/tauseefk/connectors/tree/returning-a-grid)
+  - [4.2 - Rendering the grid](https://github.com/tauseefk/connectors/tree/rendering-html-grid)
+- Chapter 5
+  - [5.1 - Making moves]()
+  - [5.2 - Interactivity]()
 - [Chapter 6 - Who won?]()
 
 ## Other Resources
