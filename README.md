@@ -37,7 +37,8 @@ These are some of the things you will be able to do by the end of this series:
 - Chapter 5
   - [5.1 - Making moves](https://github.com/tauseefk/connectors/tree/making-moves)
   - [5.2 - Adding interactivity](https://github.com/tauseefk/connectors/tree/interactivity)
-- [Chapter 6 - Who won?]()
+- Chapter 6
+  - [Chapter 6 - Computing the winner](https://github.com/tauseefk/connectors/tree/winning-move)
 
 ## Other Resources
 
