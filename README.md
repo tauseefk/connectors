@@ -28,15 +28,15 @@ These are some of the things you will be able to do by the end of this series:
 
 - [Chapter 1 - Initial Commit](https://github.com/tauseefk/connectors/tree/making-connections)
 - [Chapter 2 - Structuring Data](https://github.com/tauseefk/connectors/tree/data-as-enums)
-- Chapter 3 - Calling home
-  - [3.1 - Calling home](https://github.com/tauseefk/connectors/tree/calling-home)
-  - [3.2 - Calling home again](https://github.com/tauseefk/connectors/tree/calling-home-again)
+- Chapter 3
+  - [3.1 - Calling JS functions from Rust](https://github.com/tauseefk/connectors/tree/calling-home)
+  - [3.2 - Using `js_sys` crate](https://github.com/tauseefk/connectors/tree/calling-home-again)
 - Chapter 4
-  - [4.1 - Returning the grid](https://github.com/tauseefk/connectors/tree/returning-a-grid)
-  - [4.2 - Rendering the grid](https://github.com/tauseefk/connectors/tree/rendering-html-grid)
+  - [4.1 - Returning data to Javascript](https://github.com/tauseefk/connectors/tree/returning-a-grid)
+  - [4.2 - Rendering the board as HTML](https://github.com/tauseefk/connectors/tree/rendering-html-grid)
 - Chapter 5
   - [5.1 - Making moves](https://github.com/tauseefk/connectors/tree/making-moves)
-  - [5.2 - Interactivity]()
+  - [5.2 - Adding interactivity](https://github.com/tauseefk/connectors/tree/interactivity)
 - [Chapter 6 - Who won?]()
 
 ## Other Resources
