@@ -11,11 +11,11 @@ May the connect-4s be with you.
 
 ## Prerequisites
 
-- Node.js (for running the web-server)
-- Rust toolchain (for running the Rust code)
-- wasm-pack (for compiling to WASM)
+- [Node.js](https://nodejs.org/en/download) (for running the web-server)
+- [Rust toolchain](https://www.rust-lang.org/tools/install) (for running the Rust code)
+- [wasm-pack](https://drager.github.io/wasm-pack/installer/) (for compiling to WASM)
 
-## Outcomes [WIP]
+## Outcomes
 
 These are some of the things you will be able to do by the end of this series:
 
@@ -39,6 +39,8 @@ These are some of the things you will be able to do by the end of this series:
   - [5.2 - Adding interactivity](https://github.com/tauseefk/connectors/tree/interactivity)
 - Chapter 6
   - [Chapter 6 - Computing the winner](https://github.com/tauseefk/connectors/tree/winning-move)
+- Chapter 7
+  - [Chapter 7 - React-ing]()
 
 ## Other Resources
 
