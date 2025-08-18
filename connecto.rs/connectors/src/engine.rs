@@ -1,7 +1,7 @@
 use crate::prelude::*;
 
 #[wasm_bindgen]
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, PartialEq)]
 pub enum Player {
     Red,
     Black,
@@ -52,6 +52,14 @@ impl TileType {
     pub fn is_empty(&self) -> bool {
         matches!(self, TileType::Empty)
     }
+
+    pub fn does_belong_to(&self, player: Player) -> bool {
+        match self {
+            TileType::Empty => false,
+            TileType::Red => player == Player::Red,
+            TileType::Black => player == Player::Black,
+        }
+    }
 }
 
 #[wasm_bindgen]
@@ -59,6 +67,7 @@ pub struct Board {
     row_count: usize,
     col_count: usize,
     pub player_turn: Player,
+    pub winner: Option<Player>,
     board: Vec<TileType>,
 }
 
@@ -72,6 +81,7 @@ impl Board {
             col_count,
             board,
             player_turn: Player::Red,
+            winner: None,
         }
     }
 
@@ -91,13 +101,24 @@ impl Board {
 
     /// Selects a column
     ///
-    /// if the col_idx is out of bounds, return false
-    /// if it's in bounds updates the last empty tile for the column
-    /// and ends the current player's turn
-    pub fn select_col(&mut self, col_idx: u8) -> bool {
-        if !self.is_in_bounds(col_idx) {
-            return false;
+    /// if the col_idx is out of bounds, rejects the move
+    /// else makes a move
+    /// returns the move outcome
+    ///
+    pub fn select_col(&mut self, col_idx: u8) {
+        let col_idx = col_idx as usize;
+
+        if self.winner.is_some() || !self.is_in_bounds(col_idx) {
+            return;
         }
+
+        self.make_move(col_idx);
+    }
+
+    /// Makes a move for the current player
+    /// and ends the current player's turn
+    ///
+    fn make_move(&mut self, col_idx: usize) {
         let rows = self.board.chunks(self.col_count);
         let mut empty_row_idx: Option<usize> = None;
         for (idx, row) in rows.rev().enumerate() {
@@ -130,15 +151,77 @@ impl Board {
                         }
                     })
                     .collect();
+
+                // calculate the winner before ending the player's turn
+                match self.is_game_over(empty_row_idx, col_idx) {
+                    true => {
+                        // update the winner
+                        self.winner = Some(self.player_turn);
+                    }
+                    false => {}
+                };
+
                 self.end_player_turn();
-                true
             }
-            None => false,
+            None => {}
         }
     }
 
+    /// Check if the game is over
+    ///
+    fn is_game_over(&self, row_idx: usize, col_idx: usize) -> bool {
+        self.has_4_consecutive_tiles_in_row(self.player_turn, row_idx)
+            || self.has_4_consecutive_tiles_in_col(self.player_turn, col_idx)
+    }
+
+    /// Check if there are 4 consecutive tiles in a row for the given player
+    /// As row tiles are contiguous, we can just use a smaller slice
+    ///
+    fn has_4_consecutive_tiles_in_row(&self, player: Player, row_idx: usize) -> bool {
+        let row_start_idx = self.idx_from_row_col(row_idx, 0);
+        let row_end_idx = row_start_idx + self.col_count;
+        // get a slice of tiles that belong to the row with `row_idx`
+        let row_tiles = &self.board[row_start_idx..row_end_idx];
+
+        let mut consecutive_count = 0;
+        for tile in row_tiles {
+            if tile.does_belong_to(player) {
+                consecutive_count += 1;
+                if consecutive_count >= 4 {
+                    return true;
+                }
+            } else {
+                consecutive_count = 0;
+            }
+        }
+
+        false
+    }
+
+    /// Check if there are 4 consecutive tiles in a column for the given player
+    /// have to iterate over all rows as column tiles are not contiguous
+    ///
+    fn has_4_consecutive_tiles_in_col(&self, player: Player, col_idx: usize) -> bool {
+        let mut consecutive_count = 0;
+        for row_idx in 0..self.row_count {
+            let tile_idx = self.idx_from_row_col(row_idx, col_idx);
+            let tile = &self.board[tile_idx];
+
+            if tile.does_belong_to(player) {
+                consecutive_count += 1;
+                if consecutive_count >= 4 {
+                    return true;
+                }
+            } else {
+                consecutive_count = 0;
+            }
+        }
+
+        false
+    }
+
     /// Check whether the col_idx provided is in the board's bounds
-    fn is_in_bounds(&self, col_idx: u8) -> bool {
+    fn is_in_bounds(&self, col_idx: usize) -> bool {
         (col_idx as usize) < self.col_count
     }
 

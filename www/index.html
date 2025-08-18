@@ -28,8 +28,16 @@
             init().then(() => {
                 const board = Board.new(ROW_COUNT, COL_COUNT);
                 const render = () => {
+                    // conditionally render the winner once the game concludes
                     playerTurnEl.innerText =
-                        DISPLAY_TURN_MAP[board.player_turn];
+                        board.winner !== undefined
+                            ? `${DISPLAY_TURN_MAP[board.winner]} wins!`
+                            : DISPLAY_TURN_MAP[board.player_turn];
+
+                    if (board.winner !== undefined) {
+                        gameBoardEl.classList.add("pointer-none");
+                    }
+
                     const tiles = Array.from(board.get_board).map(
                         (tileEnumValue) => DISPLAY_TILE_MAP[tileEnumValue],
                     );
@@ -43,6 +51,11 @@
 
                     gameBoardEl.innerHTML = "";
                     gameBoardEl.appendChild(fragment);
+                };
+
+                const renderGameOver = () => {
+                    gameBoardEl.innerHTML = "";
+                    gameBoardEl.appendChild(document.createElement("div"));
                 };
 
                 gameBoardEl.addEventListener("click", (event) => {
