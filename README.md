@@ -34,6 +34,7 @@ chmod +x build.sh
 
 # starting the node server
 cd www
+npm i
 npm run dev
 ```
 
