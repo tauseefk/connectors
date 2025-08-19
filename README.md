@@ -34,7 +34,7 @@ chmod +x build.sh
 
 # starting the node server
 cd www
-node server.mjs
+npm run dev
 ```
 
 ## Directory Structure
@@ -43,9 +43,9 @@ node server.mjs
 connectors/
 ├─ connecto.rs/                // Rust workspace
 │  ├─ build.sh                 // compiles engine to WASM
-│  └─ connectors/              // Rust crate
-│     ├─ src/lib.rs            // entry point
-│     └─ src/engine.rs         // engine
+│  └─ connectors/
+│     ├─ src/lib.rs            // Rust entry point
+│     └─ src/engine.rs         // engine code
 └─ www/                        // client-side code
 ```
 
