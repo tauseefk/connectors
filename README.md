@@ -9,12 +9,6 @@ But if you're already curious about Rust, hopefully this repository will speed u
 
 May the connect-4s be with you.
 
-## Prerequisites
-
-- [Node.js](https://nodejs.org/en/download) (for running the web-server)
-- [Rust toolchain](https://www.rust-lang.org/tools/install) (for running the Rust code)
-- [wasm-pack](https://drager.github.io/wasm-pack/installer/) (for compiling to WASM)
-
 ## Outcomes
 
 These are some of the things you will be able to do by the end of this series:
@@ -23,6 +17,37 @@ These are some of the things you will be able to do by the end of this series:
 - send data back and forth between the Rust (WASM) and Javascript context
 - expose the minimal set of APIs from your Rust code to structure your application
 - play connect 4 in a browser
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/en/download) (for running the web-server)
+- [Rust toolchain](https://www.rust-lang.org/tools/install) (for running the Rust code)
+- [wasm-pack](https://drager.github.io/wasm-pack/installer/) (for compiling to WASM)
+
+## Development
+
+```bash
+# building the engine
+cd connecto.rs
+chmod +x build.sh
+./build.sh
+
+# starting the node server
+cd www
+node server.mjs
+```
+
+## Directory Structure
+
+```
+connectors/
+├─ connecto.rs/                // Rust workspace
+│  ├─ build.sh                 // compiles engine to WASM
+│  └─ connectors/              // Rust crate
+│     ├─ src/lib.rs            // entry point
+│     └─ src/engine.rs         // engine
+└─ www/                        // client-side code
+```
 
 ## Chapters [WIP]
 
@@ -39,8 +64,6 @@ These are some of the things you will be able to do by the end of this series:
   - [5.2 - Adding interactivity](https://github.com/tauseefk/connectors/tree/interactivity)
 - Chapter 6
   - [Chapter 6 - Computing the winner](https://github.com/tauseefk/connectors/tree/winning-move)
-- Chapter 7
-  - [Chapter 7 - React-ing]()
 
 ## Other Resources
 
