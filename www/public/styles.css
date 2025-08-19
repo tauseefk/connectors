@@ -14,15 +14,41 @@ body {
   grid-template-columns: repeat(7, 1fr);
 }
 
-#game-board span {
-  text-align: center;
-  padding: 8px;
+#game-board div {
   width: 16px;
   height: 16px;
+  padding: 8px;
+}
+
+.tile {
+  display: inline-block;
+  pointer-events: none;
+  text-align: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.tile.tile-R {
+  background-color: red;
+  color: transparent;
+}
+
+.tile.tile-B {
+  background-color: black;
+  color: transparent;
 }
 
 #player-turn {
-  padding: 8px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+#player-turn .tile.win::after {
+  content: " wins!";
+  color: black;
+  position: relative;
+  left: calc(100% + 4px);
 }
 
 .flex {
