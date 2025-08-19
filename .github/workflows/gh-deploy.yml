@@ -19,11 +19,26 @@ jobs:
         with:
           node-version: 22
 
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
+      - name: Build WASM binary
+        run: |
+          cd connecto.rs
+          chmod +x build.sh
+          ./build.sh
+
       - name: Install dependencies
         uses: bahmutov/npm-install@v1.10.9
+        with:
+          working-directory: ./www
 
       - name: Build project
         run: npm run build
+        working-directory: ./www
 
       - name: Upload build files
         uses: actions/upload-artifact@v4
