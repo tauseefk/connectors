@@ -1,0 +1,69 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build Connectors
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
+      - name: Build WASM binary
+        run: |
+          cd connecto.rs
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1.10.9
+        with:
+          working-directory: ./www
+
+      - name: Build project
+        run: npm run build
+        working-directory: ./www
+
+      - name: Upload build files
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts
+          path: ./www/dist
+
+  deploy:
+    name: Deploy Connectors
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: artifacts
+          path: ./www/dist
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./www/dist
+    needs: build
