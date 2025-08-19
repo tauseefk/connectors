@@ -64,6 +64,8 @@ connectors/
   - [5.2 - Adding interactivity](https://github.com/tauseefk/connectors/tree/interactivity)
 - Chapter 6
   - [Chapter 6 - Computing the winner](https://github.com/tauseefk/connectors/tree/winning-move)
+- Chapter 7
+  - [Chapter 7 - Build and deploy]()
 
 ## Other Resources
 

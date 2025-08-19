@@ -1,0 +1,55 @@
+{
+    "name": "esbuild-plugin-wasm",
+    "version": "1.1.0",
+    "description": "A WASM file loader for esbuild.",
+    "keywords": [
+        "wasm",
+        "webassembly",
+        "esbuild",
+        "plugin",
+        "esbuild-plugin"
+    ],
+    "homepage": "https://github.com/Tschrock/esbuild-plugin-wasm#readme",
+    "bugs": "https://github.com/Tschrock/esbuild-plugin-wasm/issues",
+    "license": "MIT",
+    "author": "Tyler Schrock <tschrock123@gmail.com>",
+    "funding": {
+        "type": "individual",
+        "url": "https://ko-fi.com/tschrock"
+    },
+    "main": "dist/index.js",
+    "repository": "github:Tschrock/esbuild-plugin-wasm",
+    "scripts": {
+        "test": "gulp test",
+        "clean": "gulp clean",
+        "bundle": "gulp bundle",
+        "types": "gulp types",
+        "build": "gulp build",
+        "lint": "gulp lint",
+        "prepare": "gulp prepare",
+        "prepublishOnly": "gulp prepublishOnly"
+    },
+    "devDependencies": {
+        "@types/chai": "^4.2.18",
+        "@types/chai-as-promised": "^7.1.5",
+        "@types/eslint": "^8.37.0",
+        "@types/gulp": "^4.0.8",
+        "@types/mocha": "^10.0.1",
+        "@types/node": "^18.16.3",
+        "@typescript-eslint/eslint-plugin": "^5.59.2",
+        "@typescript-eslint/parser": "^5.59.2",
+        "chai": "^4.3.4",
+        "chai-as-promised": "^7.1.1",
+        "del": "^6.0.0",
+        "esbuild": "^0.17.18",
+        "eslint": "^8.39.0",
+        "gulp": "^4.0.2",
+        "gulp-typescript": "^6.0.0-alpha.1",
+        "mocha": "^10.2.0",
+        "ts-node": "^10.0.0",
+        "typescript": "^5.0.4"
+    },
+    "engines": {
+        "node": ">=0.10.0"
+    }
+}

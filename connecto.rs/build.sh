@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-TARGET=web
+TARGET=bundler
 OUTDIR=../../www/connectors
 
 wasm-pack build connectors --target $TARGET --release --out-dir $OUTDIR
