@@ -2,8 +2,8 @@
 
 This is connect-4 with a Rust core compiled to WASM, wrapped in Typescript, rendered in HTML.
 
-The goal is to bait more Javascript-ies to write Rust.
-Demonstrating the `why` of writing Rust is outside the scope of this repository, demonstrating all the great things you can do with Rust is also outside the scope as I am in no way an authority on writing idiomatic Rust.
+The goal is to encourage more Javascript engineers to write Rust.
+Demonstrating the `why` of writing Rust is outside the scope of this repository, demonstrating all the great things you can do with Rust is also outside the scope as I am in no way an authority on idiomatic Rust.
 
 But if you're already curious about Rust, hopefully this repository will speed up the process of going from `whaaa` to `whoaa`.
 
