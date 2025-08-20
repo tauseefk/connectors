@@ -52,6 +52,10 @@ connectors/
 
 ## Chapters [WIP]
 
+[Start here](https://www.afloat.boats/posts/rust-for-javascript-engineers-pt-1)
+
+#### Code branches
+
 - [Chapter 1 - Initial Commit](https://github.com/tauseefk/connectors/tree/making-connections)
 - [Chapter 2 - Structuring Data](https://github.com/tauseefk/connectors/tree/data-as-enums)
 - Chapter 3
