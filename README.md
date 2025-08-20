@@ -9,7 +9,7 @@ But if you're already curious about Rust, hopefully this repository will speed u
 
 May the connect-4s be with you.
 
-## Outcomes
+### Outcomes
 
 These are some of the things you will be able to do by the end of this series:
 
@@ -18,13 +18,13 @@ These are some of the things you will be able to do by the end of this series:
 - expose the minimal set of APIs from your Rust code to structure your application
 - play connect 4 in a browser
 
-## Prerequisites
+### Prerequisites
 
 - [Node.js](https://nodejs.org/en/download) (for running the web-server)
 - [Rust toolchain](https://www.rust-lang.org/tools/install) (for running the Rust code)
 - [wasm-pack](https://drager.github.io/wasm-pack/installer/) (for compiling to WASM)
 
-## Development
+### Development
 
 ```bash
 # building the engine
@@ -38,7 +38,7 @@ npm i
 npm run dev
 ```
 
-## Directory Structure
+### Directory Structure
 
 ```
 connectors/
@@ -50,29 +50,29 @@ connectors/
 └─ www/                        // client-side code
 ```
 
-## Chapters [WIP]
+### Blog Posts
 
-[Start here](https://www.afloat.boats/posts/rust-for-javascript-engineers-pt-1)
+- [Start here](https://www.afloat.boats/posts/rust-for-javascript-engineers-pt-1)
 
 #### Code branches
 
-- [Chapter 1 - Initial Commit](https://github.com/tauseefk/connectors/tree/making-connections)
-- [Chapter 2 - Structuring Data](https://github.com/tauseefk/connectors/tree/data-as-enums)
-- Chapter 3
-  - [3.1 - Calling JS functions from Rust](https://github.com/tauseefk/connectors/tree/calling-home)
-  - [3.2 - Using `js_sys` crate](https://github.com/tauseefk/connectors/tree/calling-home-again)
-- Chapter 4
-  - [4.1 - Returning data to Javascript](https://github.com/tauseefk/connectors/tree/returning-a-grid)
-  - [4.2 - Rendering the board as HTML](https://github.com/tauseefk/connectors/tree/rendering-html-grid)
-- Chapter 5
-  - [5.1 - Making moves](https://github.com/tauseefk/connectors/tree/making-moves)
-  - [5.2 - Adding interactivity](https://github.com/tauseefk/connectors/tree/interactivity)
-- Chapter 6
-  - [Chapter 6 - Computing the winner](https://github.com/tauseefk/connectors/tree/winning-move)
-- Chapter 7
-  - [Chapter 7 - Build and deploy](https://github.com/tauseefk/connectors/tree/deployment)
+- Part 0 - Prologue
+  - [Initial Commit](https://github.com/tauseefk/connectors/tree/making-connections)
+  - [Structuring Data](https://github.com/tauseefk/connectors/tree/data-as-enums)
+- Part 1 - Setting the board
+  - [Calling JS functions from Rust](https://github.com/tauseefk/connectors/tree/calling-home)
+  - [Using `js_sys` crate](https://github.com/tauseefk/connectors/tree/calling-home-again)
+  - [Returning data to Javascript](https://github.com/tauseefk/connectors/tree/returning-a-grid)
+  - [Rendering the board as HTML](https://github.com/tauseefk/connectors/tree/rendering-html-grid)
+- Part 2 - Playing the game
+  - [Making moves](https://github.com/tauseefk/connectors/tree/making-moves)
+  - [Adding interactivity](https://github.com/tauseefk/connectors/tree/interactivity)
+- Part 3 - Winning the game
+  - [Computing the winner](https://github.com/tauseefk/connectors/tree/winning-move)
+- Bonus - Dev ops
+  - [Build and deploy](https://github.com/tauseefk/connectors/tree/deployment)
 
-## Other Resources
+### Other Resources
 
 [The Rust Book](https://doc.rust-lang.org/book/title-page.html)
 
