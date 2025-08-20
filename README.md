@@ -70,6 +70,10 @@ connectors/
 
 ## Other Resources
 
+[The Rust Book](https://doc.rust-lang.org/book/title-page.html)
+
+[Rust by Example](https://doc.rust-lang.org/rust-by-example/index.html)
+
 [WASM Game of Life](https://rustwasm.github.io/book/game-of-life/introduction.html)
 
 [Bare Metal WASM](https://cliffle.com/blog/bare-metal-wasm/)
