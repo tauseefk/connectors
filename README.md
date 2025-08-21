@@ -52,7 +52,7 @@ connectors/
 
 ### Blog Posts
 
-- [Start here](https://www.afloat.boats/posts/rust-for-javascript-engineers-pt-1)
+- [Rust for Javascript Engineers - Intro](https://www.afloat.boats/posts/rust-for-javascript-engineers-pt-1)
 
 #### Code branches
 
