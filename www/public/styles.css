@@ -15,6 +15,8 @@ body {
 }
 
 #game-board div {
+  display: flex;
+  justify-content: center;
   width: 16px;
   height: 16px;
   padding: 8px;
@@ -49,6 +51,9 @@ body {
   color: black;
   position: relative;
   left: calc(100% + 4px);
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
 }
 
 .flex {
@@ -61,4 +66,25 @@ body {
 
 .pointer-none {
   pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  #game-board div {
+    width: 32px;
+    height: 32px;
+  }
+
+  .tile {
+    width: 28px;
+    height: 28px;
+  }
+
+  #player-turn {
+    height: 32px;
+    vertical-align: middle;
+  }
+
+  #player-turn .tile.win::after {
+    height: 32px;
+  }
 }
