@@ -54,6 +54,7 @@ connectors/
 
 - [Intro](https://www.afloat.boats/posts/rust-for-javascript-engineers-pt-1) ◀──────────────────────── Start here
 - [All a Board](https://www.afloat.boats/posts/rust-for-javascript-engineers-all-a-board)
+- [Interactivity](https://www.afloat.boats/posts/rust-for-javascript-engineers-interactivity)
 
 #### Code checkpoints
 
